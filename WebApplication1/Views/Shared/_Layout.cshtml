@@ -1,4 +1,5 @@
-﻿@{
+﻿@using System.Web.Optimization
+@{
     Layout = null;
 }
 
@@ -7,11 +8,14 @@
 <html>
 <head>
     <title>@ViewBag.Title - WebApplication1</title>
+    
+    @Styles.Render("~/styles")
 </head>
 <body>
 <header>
     <h1>
-        <a href="@Url.RouteUrl("Home")">Simple Blog</a>
+        <a href="@Url.RouteUrl("Home")">Web Application 1</a>
+        <i class="glyphicon glyphicon-bell"> </i>
     </h1>
     
     @if (User.Identity.IsAuthenticated)
@@ -36,10 +40,9 @@
 <footer>
     &copy; @DateTime.UtcNow.Year - Me  
 </footer>
-    
-    @RenderSection("Scripts", false)
-    
-    
+
+@Scripts.Render("~/scripts")
+@RenderSection("Scripts", false)
 
 </body>
 </html>
