@@ -11,7 +11,6 @@ namespace WebApplication1.Areas.Admin.Controllers
     {
         public ActionResult Index()
         {
-            //return Content("<h1>HEY THERE!</h1>");
             return View();
         }
     }
